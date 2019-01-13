@@ -1,0 +1,9 @@
+target
+.idea
+*.iml
+logs
+*.log
+*.log.*
+bin
+.settings
+.DS_Store
