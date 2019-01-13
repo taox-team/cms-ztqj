@@ -47,7 +47,7 @@
 		<header class="white-bg">
 			<div class="container" style="background-color: #ffffff; padding: 10px;">
 				<!--logo start-->
-				<a href="${BASE_PATH}/index.htm" class="logo" title="访问前台页面">
+				<a href="${BASE_PATH}/index.html" class="logo" title="访问前台页面">
 					<img src="${TEMPLATE_BASE_PATH}/images/logo.png" style="height: 38px;" />
 				</a>
 				<!--logo end-->
@@ -91,9 +91,9 @@
 					<li class="">
 						<a <#if menu="folder">class="active"</#if> href="${BASE_PATH}/manage/folder/list.htm"> <i class="icon-folder-open"></i> <span>目录列表</span></a>
 					</li>	
-					<li class="">
+					<#--<li class="">
 						<a <#if menu="message">class="active"</#if> href="${BASE_PATH}/manage/guestbook/list.htm"> <i class="icon-comments"></i> <span>留言列表</span></a>
-					</li>
+					</li>-->
 					<li class="">
 						<a <#if menu="admin_list">class="active"</#if> href="${BASE_PATH}/manage/admin/manage.htm"> <i class="icon-user"></i> <span>管理员管理</span></a>
 					</li>
@@ -108,9 +108,6 @@
 						<a <#if menu="update_password">class="active"</#if> href="${BASE_PATH}/manage/admin/update.htm"> <i class="icon-home"></i> <span>修改密码</span></a>
 					</li>
 					</#if>
-					<li class="">
-						<a target="_blank" href="http://rj.baidu.com/soft/detail/14744.html"><span>推荐Google浏览器</span></a>
-					</li>
 				</ul>
 			</div>
 		</aside>

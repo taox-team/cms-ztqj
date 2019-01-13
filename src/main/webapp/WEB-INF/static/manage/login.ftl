@@ -8,7 +8,7 @@
 <meta name="keyword"
 	content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-<title>师说CMS 后台</title>
+<title>中铁七局管理后台</title>
 
 <!-- Bootstrap core CSS -->
 <link href="${BASE_PATH}/static/manage/css/bootstrap.min.css"
@@ -62,8 +62,7 @@ input.error:focus {
 			action="${BASE_PATH}/admin/login.json" autocomplete="off"
 			method="post">
 			<h2 class="form-signin-heading">
-				<img src="${TEMPLATE_BASE_PATH}/images/logo.png"
-					style="height: 38px;" />
+                中铁七局管理后台
 			</h2>
 			<div class="login-wrap">
 				<div class="form-group">

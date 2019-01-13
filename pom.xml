@@ -1,16 +1,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<organization>
-		<name>shishuo</name>
+		<name>ztqj</name>
 		<url>http://www.shishuo.com</url>
 	</organization>
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.shishuo</groupId>
-	<artifactId>shishuocms</artifactId>
+	<groupId>com.ztqj</groupId>
+	<artifactId>ztqj</artifactId>
 	<packaging>war</packaging>
 	<version>2.0.1</version>
-	<name>SHISHUO CMS (http://shishuo.com/cms)</name>
-	<url>http://shishuocms.aliapp.com</url>
+	<name>ztqj</name>
 	<dependencies>
 		<dependency>
 			<groupId>junit</groupId>
@@ -324,7 +323,7 @@
 					<include>applicationContext.xml</include>
 					<include>log4j.properties</include>
 					<include>ueditor.config.json</include>
-					<include>shishuocms.properties</include>
+					<include>cms.properties</include>
 				</includes>
 			</resource>
 		</resources>

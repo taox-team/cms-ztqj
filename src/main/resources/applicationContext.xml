@@ -75,7 +75,7 @@
 	<bean id="propertyConfigurer" class="com.shishuo.cms.util.PropertyUtils">
 		<property name="locations">
 			<list>
-				<value>classpath:shishuocms.properties</value> <!-- 指定外部文件的编码 -->
+				<value>classpath:cms.properties</value> <!-- 指定外部文件的编码 -->
 			</list>
 		</property>
 	</bean>
