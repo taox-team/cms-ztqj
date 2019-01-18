@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -90,7 +91,7 @@ public class MenuListController extends ManageBaseAction {
 
     @RequestMapping(value = "/getArticleById", method = RequestMethod.GET)
     @ResponseBody
-    public WebReturnObject getAnnouncementList(int id){
+    public WebReturnObject getArticleById(int id){
         try{
             ArticleVo articleVo = this.articleService.getArticleById(id);
             return WebReturnObject.getInstanceForSuccess(articleVo);
@@ -99,7 +100,25 @@ public class MenuListController extends ManageBaseAction {
         }
     }
 
+    @RequestMapping(value = "/getAllArticleInDevice", method = RequestMethod.GET)
+    @ResponseBody
+    public WebReturnObject getAllArticleInDevice(){
+        try{
+            Integer pageNum = 1;
+            Integer pageSize = Integer.MAX_VALUE;
 
+            Folder folder = this.folderService.getFolderByEname(Constants.GSSBSL_NAME);
+            List<FolderVo> list =  this.folderService.getFolderListByFatherId(folder.getFolderId(), FolderConstant.status.display);
 
+            List<ArticleVo> dataList = new ArrayList<ArticleVo>();
+            for(FolderVo folderVo : list){
+                PageVo<ArticleVo> pageList = this.articleService.getArticlePageByFolderId(folderVo.getFolderId(),pageNum,pageSize);
+                dataList.addAll(pageList.getList());
+            }
+            return WebReturnObject.getInstanceForSuccess(dataList);
+        }catch (Exception e){
+            return WebReturnObject.getInstanceForError("返回错误",e.getMessage());
+        }
+    }
 
 }
