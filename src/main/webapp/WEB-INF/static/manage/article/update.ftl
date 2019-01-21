@@ -16,7 +16,7 @@
 			<div class="col-lg-12">
 				<section class="panel">
 					<header class="panel-heading"> 
-						修改文章
+						修改内容
 					</header>
 					<div class="panel-body">
 	                      <div class="form-group">

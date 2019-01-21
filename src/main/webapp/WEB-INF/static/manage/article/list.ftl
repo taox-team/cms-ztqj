@@ -73,7 +73,7 @@
 							</ul>
 						   </div>
 						   <div class="col-lg-8">
-								<a class="btn btn-primary" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=${folderId}">增加文章</a>
+								<a class="btn btn-primary" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=${folderId}">增加内容</a>
 						   </div>
 				</div>
 			</header>

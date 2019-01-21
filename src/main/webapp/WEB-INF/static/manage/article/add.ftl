@@ -12,7 +12,7 @@
 			<div class="col-lg-12">
 				<section class="panel">
 					<header class="panel-heading"> 
-						增加文章
+						增加内容
 					</header>
 					<div class="panel-body">
 						<div class="form-group">
@@ -53,7 +53,7 @@
                           </div>
                         </div>                                              
 						<div class="form-group">
-                              <label class="col-sm-2 col-sm-2 control-label">文章内容</label>
+                              <label class="col-sm-2 col-sm-2 control-label">内容</label>
                               <div class="col-sm-10">
                                   <script id="content" name="content" type="text/plain"
 										style="width: 100%; height: 260px;"></script>
