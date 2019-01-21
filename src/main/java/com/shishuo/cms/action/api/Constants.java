@@ -6,5 +6,9 @@ public class Constants {
     //公司设备
     public static final String GSSBSL_NAME = "gssbsl";
 
+    //人员实力
+    public static final String RYSL_NAME = "rysl";
+
+
 
 }

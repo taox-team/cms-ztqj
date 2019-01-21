@@ -83,7 +83,7 @@
                             <table class="table table-striped table-advance table-hover">
                             	<thead>
                                 	<tr>
-										<th>文章名称</th>
+										<th>标题</th>
 										<th>状态</th>
 										<th>审核</th>
                 						<th>所属目录</th>
@@ -132,10 +132,10 @@
                   							<a href="javascript:void(0);" class="js_article_delete" articleId="${e.articleId}" title="是否删除文章">
                   								删除
                   							</a>
-                  							| 
+                  							<#--|
                   							<a href="${BASE_PATH}/manage/article/preview.htm?articleId=${e.articleId}" target="_blank">
                   								预览
-                  							</a>
+                  							</a>-->
                 						</td>
                                 	</tr>
                                 	</#list>

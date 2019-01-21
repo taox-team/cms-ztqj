@@ -121,4 +121,18 @@ public class MenuListController extends ManageBaseAction {
         }
     }
 
+    @RequestMapping(value = "/getPeopleList", method = RequestMethod.GET)
+    @ResponseBody
+    public WebReturnObject getPeopleList(Integer pageNum , Integer pageSize){
+        try{
+            pageNum = pageNum==null?1:pageNum;
+            pageSize = pageSize==null?50:pageSize;
+            Folder folder  =  this.folderService.getFolderByEname(Constants.RYSL_NAME);
+            PageVo<ArticleVo> pageList = this.articleService.getArticlePageByFolderId(folder.getFolderId(),pageNum,pageSize);
+            return WebReturnObject.getInstanceForSuccess(pageList);
+        }catch (Exception e){
+            return WebReturnObject.getInstanceForError("返回错误",e.getMessage());
+        }
+    }
+
 }

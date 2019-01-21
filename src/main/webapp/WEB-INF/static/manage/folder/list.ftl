@@ -155,7 +155,7 @@
 												</a>
 												 | 
 												<a href="${BASE_PATH}/manage/article/list.htm?folderId=${folder.folderId}"  folderId="${folder.folderId}" href="javascript:void(0);">
-													文章列表
+													内容列表
 												</a>
 											</td>
 										</tr>
