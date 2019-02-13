@@ -153,10 +153,13 @@
 												<a class="js_folder_delete" folderId="${folder.folderId}" href="javascript:void(0);" title="删除">
 													删除
 												</a>
-												 | 
+												 <br/>
 												<a href="${BASE_PATH}/manage/article/list.htm?folderId=${folder.folderId}"  folderId="${folder.folderId}" href="javascript:void(0);">
 													内容列表
 												</a>
+												|
+                                                <a
+                                                        href="${BASE_PATH}/manage/folder/list.htm?folderId=${folder.folderId}">子目录</a></td>
 											</td>
 										</tr>
 										</#list>

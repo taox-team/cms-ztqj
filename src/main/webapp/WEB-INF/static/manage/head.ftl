@@ -48,7 +48,8 @@
 			<div class="container" style="background-color: #ffffff; padding: 10px;">
 				<!--logo start-->
 				<a href="${BASE_PATH}/index.html" class="logo" title="访问前台页面">
-					<img src="${TEMPLATE_BASE_PATH}/images/logo.png" style="height: 38px;" />
+					<#--<img src="${TEMPLATE_BASE_PATH}/images/logo.png" style="height: 38px;" />-->
+                        郑州工程装备有限公司管理系统
 				</a>
 				<!--logo end-->
 				<div class="nav notify-row" id="top_menu">

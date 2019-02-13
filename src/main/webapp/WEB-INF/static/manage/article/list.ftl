@@ -60,7 +60,7 @@
             <section class="panel">
 	                <header class="panel-heading">
 		                <div class="row">
-		                  		<div class="col-lg-4">
+		                  		<div class="col-lg-6">
 							<ul class="breadcrumb" style="margin-bottom:0px;">
 								<li>
 									<a href="${BASE_PATH}/manage/article/list.htm">根目录</a>
@@ -72,9 +72,15 @@
 								</#list>
 							</ul>
 						   </div>
-						   <div class="col-lg-8">
-								<a class="btn btn-primary" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=${folderId}">增加内容</a>
+						   <div class="col-lg-2">
+								<a class="btn btn-primary" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=11">增加设备</a>
 						   </div>
+                            <div class="col-lg-2">
+                                <a class="btn btn-success" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=6">增加人员</a>
+                            </div>
+                            <div class="col-lg-2">
+                                <a class="btn btn-warning" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=16">增加公告</a>
+                            </div>
 				</div>
 			</header>
                 <div class="panel-body">
