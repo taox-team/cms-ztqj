@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <title>中铁七局集团郑州工程装备有限公司</title>
+    <title>中铁七局集团郑州公司工程装备分公司</title>
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all"/>
     <script src="js/jquery-1.8.3.min.js"></script>
     <script src="js/common/common.js"></script>
@@ -10,13 +10,87 @@
     <script src="js/menu.js"></script>
 
 </head>
+<style>
+    #lunbobox {
+        width:100%;
+        height:270px;
+        position:relative;
+    }
+    .lunbo {
+        width:100%;
+        height:270px;
+        position: relative;
+    }
+    .lunbo div {
+        width:100%;
+        height:270px;
+        position:absolute;
+        top:0px;
+        left:0px;
+    }
+    #lunbobox ul {
+        width:285px;
+        position:absolute;
+        bottom:10px;
+        right:0px;
+        z-index:5;
+    }
+    #lunbobox ul li {
+        cursor:pointer;
+        width:30px;
+        height:10px;
+        border:1px solid #cccccc;
+        float:left;
+        list-style:none;
+        background:#cccccc;
+        text-align:center;
+        margin:0px 5px 0px 0px;
+    }
+    #toleft {
+        display:none;
+        width:30px;
+        height:100px;
+        font-size:40px;
+        line-height:100px;
+        text-align:center;
+        color:#f4f4f4;
+        /*background:#cccccc;
+        */
+        /*background:url("../images/toleft.jpg")no-repeat center;
+        */
+        position:absolute;
+        top:90px;
+        left:12px;
+        cursor:pointer;
+        z-index:99;
+        opacity:0.4;
+    }
+    #toright {
+        display:none;
+        width:30px;
+        height:100px;
+        font-size:40px;
+        line-height:100px;
+        text-align:center;
+        color:#f4f4f4;
+        /*background:#cccccc;
+        */
+        position:absolute;
+        top:90px;
+        right:0px;
+        cursor:pointer;
+        z-index:99;
+        opacity:0.4;
+    }
+
+</style>
 
 <body>
 <div id="hearder2" class="clearfix">
     <div class="logo">
-        <img src="images/logo.png">
+        <img src="images/logo.jpg">
     </div>
-    <div class="logo-name">中铁七局集团郑州工程装备有限公司</div>
+    <div class="logo-name">中铁七局集团郑州公司工程装备分公司</div>
     <div class="form-tools">
         <form id="search" name="search" method="post">
             <div class="tools-link">
@@ -33,13 +107,32 @@
     <ul id="menu-box-ul">
     </ul>
 </div>
-<div id="slider-box" style="background:url(images/slider2.jpg) center center;"></div>
+<!--<div id="slider-box" style="background:url(images/slider2.jpg) center center;height:270px;"></div>-->
+<div class="middle_right">
+    <div id="lunbobox">
+        <div id="toleft">
+            &lt;</div>
+        <div class="lunbo">
+            <a href="#"><div style="background:url(images/banner3.jpg) center center;height:270px;"></div></a>
+            <a href="#"><div style="background:url(images/banner2.jpg ) center center;;height:270px;"></div></a>
+            <a href="#"><div style="background:url(images/banner1.jpg) center center;height:270px;"></div></a>
+            </div>
+        <div id="toright">&gt;</div>
+        <ul id="click-tag">
+            <li></li>
+            <li></li>
+            <li></li>
+        </ul>
+        <span></span>
+    </div>
+</div>
+
 <!-- div1 -->
 <div id="index1-div1" class="clearfix">
     <div class="index1-left675">
-        <div class="title-box">公司简介<a href="detail1.html" class="title-more" title="查看更多"><img src="images/12.gif"></a>
+        <div class="title-box">公司简介<a href="other.html?key=gsjj" class="title-more" title="查看更多"><img src="images/12.gif"></a>
         </div>
-        <p><img src="images/p-img.jpg" align="left">
+        <p><img src="images/p-img.jpg" align="left" style="width:210px;height:150px;    ">
             中铁七局集团郑州工程装备有限公司的前身是郑州铁路建设集团有限公司，始建于1953年，2003年12月重组成为世界五百强企业-中国中铁股份有限公司(601390.SH/01390.HK)下辖中铁七局集团有限公司全资子公司，公司位于河南省郑州市陇海中路3号。
             公司现有员工2750名，其中技术工人1078名，各类专业技术人员1152名，具有中、高级技术职称的352名，80余人取得了国家一级注册建造师执业资格证书。公司资产总值28亿元，年生产能力达45亿元以上。
             <a href="other.html?key=gsjj">查看更多...</a></p>
@@ -66,14 +159,140 @@
 
     </ul>
 </div>
-<script type="text/javascript">
-    $(document).ready(function () {
+<script>
+    ///轮播
 
+    $(function() {
+        //$("#toright").hide();
+        //$("#toleft").hide();
+        $('#toright').hover(function() {
+            $("#toleft").hide()
+        }, function() {
+            $("#toleft").show()
+        })
+        $('#toleft').hover(function() {
+            $("#toright").hide()
+        }, function() {
+            $("#toright").show()
+        })
+    })
 
+    var t;
+    var index = 0;
+    /////自动播放
+    t = setInterval(play, 3000)
 
+    function play() {
+        index++;
+        if (index > 2) {
+            index = 0
+        }
+        // console.log(index)
+        $("#click-tag li").eq(index).css({
+            "background": "#999",
+            "border": "1px solid #ffffff"
+        }).siblings().css({
+            "background": "#cccccc",
+            "border": ""
+        })
+
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+    };
+
+    ///点击鼠标 图片切换
+    $("#click-tag li").click(function() {
+        //添加 移除样式
+        //$(this).addClass("lito").siblings().removeClass("lito"); //给当前鼠标移动到的li增加样式 且其余兄弟元素移除样式   可以在样式中 用hover 来对li 实现
+        $(this).css({
+            "background": "#999",
+            "border": "1px solid #ffffff"
+        }).siblings().css({
+            "background": "#cccccc"
+        })
+        var index = $(this).index(); //获取索引 图片索引与按钮的索引是一一对应的
+        // console.log(index);
+        index = index;
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
     });
+
+    /////////////上一张、下一张切换
+    $("#toleft").click(function() {
+        index--;
+        if (index <= 0) //判断index<0的情况为：开始点击#toright  index=0时  再点击 #toleft 为负数了 会出错
+        {
+            index = 2
+        }
+        console.log(index);
+        $("#click-tag li").eq(index).css({
+            "background": "#999",
+            "border": "1px solid #ffffff"
+        }).siblings().css({
+            "background": "#cccccc"
+        })
+
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）必须要写
+    }); // $("#imgbox a ")获取到的是一个数组集合 。所以可以用index来控制切换
+
+    $("#toright").click(function() {
+        index++;
+        if (index > 2) {
+            index = 0
+        }
+        console.log(index);
+        $(this).css({
+            "opacity": "0.5"
+        })
+        $("#click-tag li").eq(index).css({
+            "background": "#999",
+            "border": "1px solid #ffffff"
+        }).siblings().css({
+            "background": "#cccccc"
+        })
+        $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
+    });
+    $("#toleft,#toright").hover(function() {
+            $(this).css({
+                "color": "black"
+            })
+        },
+        function() {
+            $(this).css({
+                "opacity": "0.3",
+                "color": ""
+            })
+        })
+    ///
+
+    ///////鼠标移进  移出
+    $("#click-tag li,.lunbo a img,#toright,#toleft ").hover(
+        ////////鼠标移进
+        function() {
+            $('#toright,#toleft').show()
+            clearInterval(t);
+
+        },
+        ///////鼠标移开
+        function() {
+            //$('#toright,#toleft').hide()
+            //alert('aaa')
+            t = setInterval(play, 3000)
+
+            function play() {
+                index++;
+                if (index > 2) {
+                    index = 0
+                }
+                $("#click-tag li").eq(index).css({
+                    "background": "#999",
+                    "border": "1px solid #ffffff"
+                }).siblings().css({
+                    "background": "#cccccc"
+                })
+                $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+            }
+        })
 </script>
 
-<div id="div6">Copyright &copy; 2019 中铁七局集团郑州工程装备有限公司 All rights reserved.</div>
+<div id="div6">Copyright &copy; 2019 中铁七局集团郑州公司工程装备分公司 All rights reserved.</div>
 </body>
 </html>
