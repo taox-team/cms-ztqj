@@ -139,17 +139,17 @@ a:hover {
 
 #menu-box ul {
     width: 1000px;
-    height: 40px;
+    height: 48px;
     margin: 0 auto;
 }
 
 #menu-box ul li {
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
+    width: 90px;
+    height: 48px;
+    line-height: 48px;
     float: left;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
 }
 #menu-box ul li.active{
     background: #0056a9;
@@ -181,7 +181,7 @@ a:hover {
     background: url(../images/title-bg.png);
     border-bottom: 1px solid #ccc;
     text-align: left;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 35px;
     color: #0067ca;
     position: relative;
@@ -483,7 +483,7 @@ a:hover {
     height: 100px;
 }
 
-#div4 {
+#div4,#div44 {
     width: 998px;
     height: 35px;
     margin: 15px auto;
