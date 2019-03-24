@@ -18,9 +18,10 @@ img {
 }
 
 body {
-    color: #666;
     background: #FFF;
-    font: 12px/1.5 Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-family: "微软雅黑","黑体";
+    color:#333;
 }
 
 html {
@@ -52,7 +53,7 @@ a:hover {
 
 /********** index2 style start **********/
 #hearder2 {
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto;
 }
 
@@ -66,6 +67,7 @@ a:hover {
     width: 497px;
     height: 75px;
     margin-top: 10px;
+    cursor: pointer;
 }
 
 #hearder2 .logo-name {
@@ -134,18 +136,18 @@ a:hover {
 
 #menu-box {
     width: 100%;
-    background: #0067ca;
-
+    /*background: #0067ca;*/
+    background: #2373c8;
 }
 
 #menu-box ul {
-    width: 1000px;
+    width: 1200px;
     height: 48px;
     margin: 0 auto;
 }
 
 #menu-box ul li {
-    width: 90px;
+    width: 108px;
     height: 48px;
     line-height: 48px;
     float: left;
@@ -167,41 +169,48 @@ a:hover {
     font-weight: 600;
     font-size: 16px;
 }
-
 /* slider */
 #slider-box {
-    margin-top:5px;
+    /*margin-top:5px;*/
     width: 100%;
-    height: 150px;
+    height: 260px;
     text-align: center;
-    margin-bottom: 7px;
+    /*margin-bottom: 7px;*/
 }
 
 /* --- 通用样式 --- */
 .title-box {
-    height: 35px;
-    padding: 0 15px 0 20px;
-    background: url(../images/title-bg.png);
-    border-bottom: 1px solid #ccc;
-    text-align: left;
-    font-size: 16px;
-    line-height: 35px;
-    color: #0067ca;
+    width: 100%;
+    /*float: left;*/
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 1px solid #ddd;
+
+
+}
+
+.title-box span{
+    float: left;
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    height: 45px;
+    line-height: 45px;
+    border-bottom: 2px solid #2373c8;
+    display: inline-block;
     position: relative;
-    font-weight: 600;
+    z-index: 2;
 }
 
 .title-more {
-    position: absolute;
-    top: 0;
-    right: 10px;
-    font-size: 12px;
-    color: #0067ca;
+    float: right;
+    color: #a1a1a1;
+    font-size: 14px;
 }
 
 /* div1 */
 #div1 {
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto;
 }
 
@@ -331,7 +340,7 @@ a:hover {
 
 /* div2 */
 #div2 {
-    width: 1000px;
+    width: 1200px;
     margin: 15px auto;
 }
 
@@ -477,27 +486,27 @@ a:hover {
 }
 
 #div3 {
-    width: 1000px;
+    width: 1200px;
     height: 100px;
     margin: 0 auto;
 }
 
 #div3 img {
-    width: 1000px;
+    width: 1200px;
     height: 100px;
 }
 
 #div4 {
-    width: 998px;
+    width: 1198px;
     height: 35px;
     margin: 15px auto;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ccc;*/
 }
 #div44 {
-      width: 998px;
+      width: 1198px;
       height: 35px;
       margin: 15px auto;
-      border: 1px solid #ccc;
+      /*border: 1px solid #ccc;*/
   }
 .opeimg{
     cursor: pointer;
@@ -505,7 +514,7 @@ a:hover {
 
 /* scrollleft */
 .scrollleft {
-    width: 1000px;
+    width: 1200px;
     margin: 0 auto 15px auto;
 }
 
@@ -532,7 +541,7 @@ a:hover {
 }
 
 #div5 .link-box {
-    width: 1000px;
+    width: 1200px;
     height: 65px;
     line-height: 65px;
     margin: 0 auto;
@@ -547,35 +556,51 @@ a:hover {
 
 #div6 {
     width: 100%;
-    height: 50px;
+    height: 180px;
     background: #0067ca;
     color: #fff;
     text-align: center;
     line-height: 20px;
     padding-top: 8px;
+    overflow: hidden;
+}
+#div66{
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    line-height: 20px;
+    padding-top: 8px;
+    text-align: center;
 }
 
 /* detail & list page style */
 #detail2-box {
-    width: 998px;
-    background: url(../images/ny-bg.png) top left repeat-x;
-    margin: 0 auto 15px auto;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 1198px;
+    margin: 0 auto;
+    margin-top:10px;
+    border: 1px solid #ececec;
+    overflow: hidden;
+    min-height: 750px;
 }
 
 #detail2-box .tit-80 {
-    height: 77px;
-    line-height: 60px;
-    color: #fff;
-    font-size: 14px;
-    padding: 0 20px 20px 75px;
-    background: url(../images/tit-icon.png) 20px 10px no-repeat;
-    background-size: 32px;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    border-bottom: 1px solid #f0f0f0;
+    padding:10px 20px;
+    margin-bottom: 6px;
 }
 
 #detail2-box .tit-80 a {
-    color: #fff;
+    float: left;
+    font-size: 24px;
+    color: #333;
+    font-weight: bold;
+}
+#detail2-box .tit-80 a:hover{
+    text-decoration: none;
 }
 
 #detail2-box .tabula-box {
@@ -586,39 +611,40 @@ a:hover {
 }
 
 #detail2-box .tabula-box .max-tit {
-    width: 220px;
-    height: 40px;
-    line-height: 40px;
+    /*width: 220px;*/
+    height: 50px;
+    line-height: 50px;
     text-align: center;
     color: #0f62c5;
     font-size: 18px;
-    border-bottom: 1px dotted #0f62c5;
-    margin-left: 10px;
+    border-bottom: 1px dotted #ececec;
+    /*margin-left: 10px;*/
 }
 
 #detail2-box .tabula-box ul {
-    padding: 10px;
+    /*padding: 10px;*/
     min-height: 380px;
 }
 
 #detail2-box .tabula-box ul li {
-    height: 35px;
+    height: 55px;
     padding-left: 30px;
-    line-height: 35px;
-    font-size: 14px;
-    border-bottom: 1px dotted #ccc;
-    background: url(../images/li2.png) left center no-repeat;
+    line-height: 55px;
+    font-size: 16px;
+    border-bottom: 1px solid #ececec;
+    /*background: url(../images/li2.png) left center no-repeat;*/
 }
 #detail2-box .tabula-box ul li.active{
-    background: #0067ca;
+    /*background: #0067ca;*/
+    border-left:5px solid #0067ca;
 }
 #detail2-box .tabula-box ul li.active a{
-    color:#fff;
+    /*color:#fff;*/
 }
 
 #detail2-box .content-box {
-    width: 695px;
-    padding: 0 20px;
+    width: 1150px;
+    padding: 20px 20px;
     float: right;
 }
 
@@ -634,8 +660,8 @@ a:hover {
 #detail2-box .content-box h1 {
     height: 50px;
     line-height: 50px;
-    border-bottom: 1px dotted #0f62c5;
-    font-size: 16px;
+    border-bottom: 1px dotted #ececec;
+    font-size: 18px;
     text-align: center;
     margin-bottom: 10px;
 }
@@ -699,23 +725,23 @@ a:hover {
 }
 
 #detail2-box .content-box li.pic {
-    width: 225px;
+    width: 285px;
     margin-left: 10px;
     margin-bottom: 20px;
     float: left;
 }
 
 #detail2-box .content-box li.pic .img-box {
-    width: 203px;
-    height: 140px;
+    width: 267px;
+    height: 180px;
     margin-right: 10px;
     padding: 10px;
-    border: 1px solid #ccc;
+    /*border: 1px solid #ececec;*/
 }
 
 #detail2-box .content-box li.pic .img-box img {
-    width: 203px;
-    height: 140px;
+    width: 257px;
+    height: 180px;
 }
 
 /* 分页 */
@@ -771,24 +797,26 @@ a:hover {
     vertical-align: middle;
 }
 
-#index1-div1 {
-    width: 1000px;
+#index1-div1,.index1-div1 {
+    width: 1200px;
     margin: 15px auto 15px auto;
 }
 
 #index1-div1 .index1-left675 {
     width: 675px;
-    height: 205px;
+    height: 233px;
     float: left;
     overflow: hidden;
 }
 
 #index1-div1 .index1-left675 p {
-    padding: 10px;
+    /*padding: 10px;*/
+    margin-top:55px;
     font-size: 12px;
-    text-indent: 2em;
-    line-height: 20px;
+    font-size: 14px;
+    line-height: 1.7;
     color: #888;
+    text-indent: 2em;
 }
 
 #index1-div1 .index1-left675 p img {
@@ -801,39 +829,40 @@ a:hover {
     font-size: 12px;
 }
 
-#index1-div1 .index1-right300 {
-    width: 300px;
+#index1-div1 .index1-right300,.index1-div1 .index1-right300 {
+    width: 500px;
     height: 205px;
     float: right;
     overflow: hidden;
 }
 
-#index1-div1 .index1-right300 li {
-    height: 40px;
-    line-height: 40px;
-    padding-left: 15px;
-    background: url(../images/li_ii.png) left center no-repeat;
-    text-align: left;
-    font-size: 14px;
-    border-bottom: 1px dotted #ccc;
+#index1-div1 .index1-right300 li,.index1-div1 .index1-right300 li {
+    width: 100%;
+    float: left;
+    height: 45px;
+    line-height: 45px;
+    /*border-bottom: 1px solid #ddd;*/
     position: relative;
 }
 
-#index1-div1 .index1-right300 li a {
-    width: 210px;
+
+#index1-div1 .index1-right300 li a,.index1-div1 .index1-right300 li a {
+    width:400px;
     height: 35px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
     display: inline-block;
+    color: #333;
+    font-size: 16px;
 }
 
-#index1-div1 .index1-right300 li span {
+#index1-div1 .index1-right300 li span,.index1-div1 .index1-right300 li span {
     position: absolute;
     top: 0;
-    right: 0;
-    color: #bbb;
-    font-size: 12px;
+    right: 26px;
+    color: #333;
+    display: block;
 }
 .pic-title-content{
     height: 180px;
@@ -852,16 +881,97 @@ a:hover {
 .pic-title-title{
     padding-left:220px;
 }
-.pic-title-title span{
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 20px;
-    color:#0f62c5;
-    display: inline-block;
+.pic-title-title span {
+    font-size: 25px;
+    text-align: center;
+    color: #333333;
+    line-height: 1.8;
+    display: block;
+    width: 100%;
+    font-weight: 800;
 }
 .pic-title-title p{
     margin-top:20px;
+    font-size: 16px;
+    text-align: center;
 }
 .pic-content{
     margin-top:20px;
+}
+.bottom-content{
+    width: 1200px;
+    float: left;
+    position: relative;
+    left: 50%;
+    margin-left: -600px;
+    background-color: #0067ca;
+}
+
+.bottom-content_b{
+    width: 1000px;
+    float: left;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+.bottom-content_left{
+    width: 700px;
+    margin-left: 25px;
+    float: left;
+}
+.bottom-content_left-box{
+    width: 100%;
+    float: left;
+}
+.bottom-content_left-box-title{
+    width: 100%;
+    float: left;
+    font-size: 17px;
+    color: #fff;
+    height: 17px;
+    line-height: 1;
+}
+.bottom-content_left-box-title a{
+    color:#fff;
+}
+
+
+.bottom-content_left-box-b{
+    width: 100%;
+    float: left;
+    margin-top: 15px;
+}
+.bottom-content_left-box-btm{
+    width: 100%;
+    float: left;
+    font-size: 14px;
+    color: #abcaeb;
+    line-height: 40px;
+}
+.bottom-content_left-box-btm p{
+    width: 50%;
+    float: left;
+}
+.gonggao-list{
+    overflow: hidden;
+    height: 44px;
+    padding-left: 13px;
+    background: url(icon.png) no-repeat left 22px;
+    border-bottom: 1px dashed #dddddd;
+}
+.gonggao-list a{
+    line-height: 44px;
+    font-size: 16px;
+    color: #333333;
+    display: block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.gonggao-list span{
+    line-height: 44px;
+    float: right;
+    font-size: 16px;
+    color: #999999;
+
 }

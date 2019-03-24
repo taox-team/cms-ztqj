@@ -1,7 +1,71 @@
 var indexManager = {
     init:function(){
-        this.getAnnouncementList();
+        // this.getAnnouncementList();
         this.getAllArticleInDevice();
+        this.getNoticeList();
+    },
+
+    getNoticeList:function(){
+        var _this = this;
+        $.ajax({
+            url: 'http://' + location.host + '/api/menu/getMenuById?id=16',
+            method:'get',
+            success:function(res){
+                if(res.success){
+                    var data = res.data.folderList;
+                    var str = "";
+                   debugger;
+                    for(var ii=0;ii<3;ii++){
+                        var dt = data[ii];
+                        if(dt){
+                            $("#notice-ul-"+ii+"-name").html(dt.name);
+                          _this.getArticleList(ii,dt.folderId);
+                       }
+
+                    }
+
+                }else{
+                    alert("请求失败，请刷新重试")
+                }
+            },
+            error:function(err){
+                alert("请求失败，请刷新重试")
+            }
+        });
+    },
+
+    getArticleList:function(index,folderId){
+        var _this = this;
+        $.ajax({
+            url: 'http://' + location.host + '/api/menu/getArticleByMenuId?folderId='+folderId+"&pageNum="+1+"&pageSize="+10,
+            method:'get',
+            success:function(res){
+                if(res.success){
+                    var data = res.data;
+                    var str = "";
+                    debugger;
+                    for(var i=0;i<data.list.length;i++){
+                        var obj = data.list[i];
+                        str = str +  '<li class="gonggao-list"><span>'+new Date(obj.updateTime).format('yyyy-MM-dd')+'</span><a target="_blank" href="detail.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></li>';
+                    }
+                    $("#notice-ul-"+index).append(str);
+
+                }else{
+                    alert("请求失败，请刷新重试")
+                }
+            },
+            error:function(err){
+                alert("请求失败，请刷新重试")
+            }
+        });
+
+        // var folderList = dt.folderList;
+        // for(var i=0;i<folderList.length;i++){
+        //     var obj = folderList[i];
+        //     str = str + '<li><a target="_blank" href="detail.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'
+        //         +obj.name+'</a><span>'+new Date(obj.createTime).format('yyyy-MM-dd')+'</span></li>';
+        // }
+
     },
 
     getAllArticleInDevice:function(){
@@ -17,7 +81,7 @@ var indexManager = {
                         var obj = data[i];
 
                         str = str + '<li>'
-                            +'<a href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'"><img alt="'+obj.title+'" src="http://'+location.host+'/'+obj.pictureUrl+'"/></a>'
+                            +'<a  href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'"><img alt="'+obj.title+'" src="http://'+location.host+'/'+obj.pictureUrl+'"/></a>'
                         +'<span>'+obj.title+'</span>'
                         +'</li>'
                         +' <li>';
@@ -36,7 +100,7 @@ var indexManager = {
 
     getAnnouncementList:function(){
         $.ajax({
-            url: 'http://' + location.host + '/api/menu/getAnnouncementList? pageNum=1&pageSize=20',
+            url: 'http://' + location.host + '/api/menu/getAnnouncementList?pageNum=1&pageSize=20',
             method:'get',
             success:function(res){
                 if(res.success){
@@ -44,7 +108,8 @@ var indexManager = {
                     var str = "";
                     for(var i=0;i<data.list.length;i++){
                         var obj = data.list[i];
-                        str = str + '<li><a href="detail.html?id='+obj.articleId+'">'+obj.title+'</a><span>'+new Date(obj.updateTime).format('yyyy-MM-dd')+'</span></li>';
+                        debugger;
+                        str = str + '<li><a target="_blank" href="detail.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a><span>'+new Date(obj.updateTime).format('yyyy-MM-dd')+'</span></li>';
                     }
                     $("#notice-ul").append(str);
                 }else{

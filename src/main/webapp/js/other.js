@@ -11,7 +11,20 @@ var otherManager = {
     init:function(){
         this.key = getQueryString('key');
         this.getMenuList();
-        
+        var mapkey = {
+            "gsjj": 'banner01.jpg',
+            "zyhdwjs": 'banner02.jpg',
+            "gsxqczlyw": 'banner04.jpg',
+            "ywhf": 'banner01.jpg',
+            "zjgc": 'banner07.jpg',
+            "lxwm": 'banner08.jpg'
+        }
+
+        if(mapkey[this.key]){
+            $("#slider-box").css("background-image","url(images/"+mapkey[this.key]+")");
+        }else{
+            $("#slider-box").css("background","url(images/banner01.jpg)");
+        }
     },
     
     getMenuList:function(){
@@ -23,7 +36,6 @@ var otherManager = {
                 if(res.success){
                     var data = res.data;
                     for(let i=0;i<data.length;i++){
-                        debugger;
                         if(data[i].ename == _this.key){
                             $("#pic-list").html(data[i].content)
                             $("#other-title").html(data[i].name)
@@ -41,4 +53,6 @@ var otherManager = {
 
         
 };
-otherManager.init();
+$(function(){
+    otherManager.init();
+})

@@ -18,8 +18,12 @@ var listPicManager = {
 
     init:function(){
         this.id = getQueryString('id');
+        this.ename = getQueryString('ename');
         this.articleId = getQueryString('articleId');
         this.getDeviceList();
+        this.initData();
+    },
+    initData:function(){
         if(this.id != null){
             if(this.articleId != null){
                 this.getArticleById();
@@ -33,15 +37,15 @@ var listPicManager = {
     },
     formatArticleInfo:function(){
         if(this.articleId != null ){
-            $("#title-pic").html("设备详情");
-            $("#isdetai").html("- 设备详情");
+            $("#title-pic").html("汽车租聘详情");
+            $("#isdetai").html("- 汽车租聘详情");
         }else{
             $("#isdetai").html("");
         }
     },
 
     formatListInfo:function(){
-        $("#title-pic").html("设备列表");
+        $("#title-pic").html("汽车租聘列表");
     },
     getArticleById:function(){
         var _this = this;
@@ -52,8 +56,8 @@ var listPicManager = {
                 if(res.success){
                     var data = res.data;
                     $("#pic-list").html('<li><div class="pic-title-content">'
-                           +'<div class="pic-title-img"><img src="http://'+location.host+'/'+data.pictureUrl+'"/></div>'
-                            +'<div class="pic-title-title"><span>'+data.title+'</span><p>'+data.summary+'</p></div>'
+                        +'<div class="pic-title-img"><img src="http://'+location.host+'/'+data.pictureUrl+'"/></div>'
+                        +'<div class="pic-title-title"><span>'+data.title+'</span><p>'+data.summary+'</p></div>'
                         +'</div><div class="pic-content">'+(data.content.replace(/src=\"/g,'src="http://'+location.host))+'</div></li>');
                     _this.formatArticleInfo();
                 }else{
@@ -79,11 +83,11 @@ var listPicManager = {
                         var obj = data[i];
                         str = str + '<li class="pic">'
                             +'<div class="img-box">'
-                            +'<a href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'
+                            +'<a href="qichezupin.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'
                             +'<img src="http://'+location.host+'/'+obj.pictureUrl+'">'
                             +'</a>'
                             +'</div>'
-                            +'<h3><a href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
+                            +'<h3><a href="qichezupin.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
                             +'</li>';
                     }
                     $("#pic-list").html(str);
@@ -103,27 +107,30 @@ var listPicManager = {
     getArticleByMenuId:function(id){
         var _this = this;
         $.ajax({
-            url: 'http://' + location.host + '/api/menu/getArticleByMenuId?menuId='+id+"&pageNum="+this.pageNum+"&pageSize="+this.pageSize,
+            url: 'http://' + location.host + '/api/menu/getArticleByMenuId?folderId='+_this.id+"&pageNum="+this.pageNum+"&pageSize="+this.pageSize,
             method:'get',
             success:function(res){
                 if(res.success){
                     var data = res.data;
                     var str = "";
+                    var id = null;
                     for(var i=0;i<data.list.length;i++){
                         var obj = data.list[i];
+                        if(i ==0 ) id = obj.folderId;
                         str = str + '<li class="pic">'
-                           +'<div class="img-box">'
-                            +'<a href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'
+                            +'<div class="img-box">'
+                            +'<a href="qichezupin.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'
                             +'<img src="http://'+location.host+'/'+obj.pictureUrl+'">'
                             +'</a>'
                             +'</div>'
-                            +'<h3><a href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
+                            +'<h3><a href="qichezupin.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
                             +'</li>';
                     }
-                    $("#pic-list").append(str);
+                    $("#pic-list").html(str);
                     _this.total = data.count;
                     _this.formatListInfo();
                     _this.createPage();
+
                 }else{
                     alert("请求失败，请刷新重试")
                 }
@@ -137,19 +144,23 @@ var listPicManager = {
     getDeviceList:function(){
         var _this = this;
         $.ajax({
-            url: 'http://' + location.host + '/api/menu/getDeviceList',
+            url: 'http://' + location.host + '/api/menu/getMenuById?id=2',
             method:'get',
             success:function(res){
                 if(res.success){
-                    var data = res.data;
+                    var data = res.data.folderList;
                     var str = "";
                     var id = "";
-                    str = '<li class="'+(_this.id == null?'active':'')+'" style="background-image: none;"><a href="list-pic.html">全部</a></li>';
+                    // str = '<li class="'+(_this.id == null?'active':'')+'" style="background-image: none;"><a href="qichezupin.html">全部</a></li>';
                     for(var i=0;i<data.length;i++){
                         var obj = data[i];
-                        str = str + '<li class="'+(_this.id == obj.folderId?'active':'')+'"><a href="list-pic.html?id='+obj.folderId+'">'+obj.name+'</a></li>';
+                        if(i==0  && _this.id == null){
+                            _this.id = obj.folderId;
+                        }
+                        str = str + '<li class="'+(_this.id == obj.folderId?'active':'')+'"><a href="qichezupin.html?id='+obj.folderId+'&ename="+obj.ename>'+obj.name+'</a></li>';
                     }
                     $("#list-pic-ul").append(str);
+                    _this.initData();
                 }else{
                     alert("请求失败，请刷新重试")
                 }

@@ -16,13 +16,14 @@
 <style>
     #lunbobox {
         width:100%;
-        height:270px;
+        height:450px;
         position:relative;
     }
     .lunbo {
         width:100%;
-        height:270px;
+        height:450px;
         position: relative;
+        background-color: #ebebeb;
     }
     .lunbo div {
         width:100%;
@@ -35,7 +36,7 @@
         width:285px;
         position:absolute;
         bottom:10px;
-        right:0px;
+        right:7%;
         z-index:5;
     }
     #lunbobox ul li {
@@ -115,9 +116,9 @@
         <div id="toleft">
             &lt;</div>
         <div class="lunbo">
-            <a href="#"><div style="background:url(images/banner3.jpg) center center no-repeat;height:270px;"></div></a>
-            <a href="#" style="display: none;"><div style="background:url(images/banner2.jpg ) center center no-repeat;;height:270px"></div></a>
-            <a href="#"  style="display: none;"><div style="background:url(images/banner1.jpg) center center  no-repeat;height:270px;"></div></a>
+            <a href="#"><div style="background:url(images/banner3.jpg) center center no-repeat;height:450px;"></div></a>
+            <a href="#" style="display: none;"><div style="background:url(images/banner2.jpg ) center center no-repeat;;height:450px"></div></a>
+            <a href="#"  style="display: none;"><div style="background:url(images/banner1.jpg) center center  no-repeat;height:450px;"></div></a>
             </div>
         <div id="toright">&gt;</div>
         <ul id="click-tag">
@@ -132,7 +133,7 @@
 <!-- div1 -->
 <div id="index1-div1" class="clearfix">
     <div class="index1-left675">
-        <div class="title-box">公司简介<a href="other.html?key=gsjj" class="title-more" title="查看更多"><img src="images/12.gif"></a>
+        <div class="title-box"><span>公司简介</span><a href="other.html?key=gsjj" class="title-more">更多></a>
         </div>
         <p><img src="images/p-img.jpg" align="left" style="width:210px;height:150px;    ">
             中铁七局集团郑州工程装备有限公司的前身是郑州铁路建设集团有限公司，始建于1953年，2003年12月重组成为世界五百强企业-中国中铁股份有限公司(601390.SH/01390.HK)下辖中铁七局集团有限公司全资子公司，公司位于河南省郑州市陇海中路3号。
@@ -140,9 +141,8 @@
             <a href="other.html?key=gsjj">查看更多...</a></p>
     </div>
     <div class="index1-right300">
-        <div class="title-box">通知公告<a href="detail.html" class="title-more" title="查看更多"><img
-                src="images/12.gif"></a></div>
-        <ul id="notice-ul">
+        <div class="title-box"><span id="notice-ul-0-name">通知公告</span><a href="detail.html" class="title-more">更多></a></div>
+        <ul id="notice-ul-0">
             <!--<li><a href="detail1.html">通知</a><span>2017-02-23</span></li>-->
         </ul>
     </div>
@@ -150,7 +150,7 @@
 
 <!-- div3 -->
 <div id="div4">
-    <div class="title-box">设备资源</div>
+    <div class="title-box" style="border-bottom: 0;"><span>设备资源</span><a href="list-pic.html" class="title-more">更多></a></div>
 </div>
 <div class="scrollleft clearfix">
     <ul id="poduction-list">
@@ -162,49 +162,66 @@
     </ul>
 </div>
 
-<div id="div44" style="height: auto;">
-    <div class="title-box">工程案例</div>
-    <div style=";height: 300px;overflow: hidden">
-        <div style="float:left;width:478px;height:300px;border-right:1px solid #ccc;padding:10px;">
-            <div style="float:left;width:220px;height:300px;">
-                <img src="images/show1-0.jpg" class="opeimg opeimgrotate" width="220" height="280" onclick="linktozjgc()">
-            </div>
-            <div style="float:right;width:243px;height:300px">
-                <div style="font-size:15px;font-weight: 600;">铁路工程</div>
-                <img src="images/show1-1.jpg" class="opeimg opeimgrotate" style="margin:7px 0;"  onclick="linktozjgc()">
-                <img src="images/show1-2.jpg" class="opeimg opeimgrotate"  onclick="linktozjgc()">
-            </div>
-        </div>
-        <div style="float:right;width:476px;height:300px;padding:10px;">
-            <div style="float:left;width:220px;height:300px;">
-                <img src="images/show2-0.jpg" class="opeimg opeimgrotate" width="220" height="280"  onclick="linktozjgc()">
-            </div>
-            <div style="float:right;width:243px;height:300px">
-                <div style="font-size:15px;font-weight: 600;">桥梁工程</div>
-                <img src="images/show2-1.jpg" class="opeimg opeimgrotate" style="margin:7px 0;width: 240px;height:120px"  onclick="linktozjgc()">
-                <img src="images/show2-2.jpg" class="opeimg opeimgrotate" style="width: 240px;height:120px"  onclick="linktozjgc()">
-            </div>
-        </div>
+<!--<div id="div44" style="height: auto;">-->
+    <!--<div class="title-box"><span>工程案例</span><a href="other.html?key=gsjj" class="title-more">更多></a></div>-->
+    <!--<div style="width:1200px;height: 300px;overflow: hidden">-->
+        <!--<div style="float:left;width:578px;height:300px;border-right:1px solid #ccc;padding:10px;">-->
+            <!--<div style="float:left;width:220px;height:300px;">-->
+                <!--&lt;!&ndash;<img src="images/show1-0.jpg" class="opeimg opeimgrotate" width="220" height="280" onclick="linktozjgc()">&ndash;&gt;-->
+                <!--<p>-->
+                    <!--公司是具有公路工程、市政公用工程、铁路工程、房屋建筑工程四项施工总承包一级资质的高新技术企业，同时具有桥梁工程、隧道工程、公路路基工程、铁路铺轨架梁、建筑装修装饰四项专业承包一级资质、测绘工程乙级资质和城市轨道交通工程等资质。-->
+                    <!--在铁路、公路、市政、轨道交通、水利水电、商品砼生产、预制构件等施工领域均具备有成熟完善的施工工艺、先进的机械装备、高效执行力管理团队和技术成熟的施工作业人员。-->
+                <!--</p>-->
+            <!--</div>-->
+            <!--<div style="float:right;width:243px;height:300px">-->
+                <!--<div style="font-size:15px;font-weight: 600;">铁路工程</div>-->
+                <!--<img src="images/show1-1.jpg" class="opeimg opeimgrotate" style="margin:7px 0;"  onclick="linktozjgc()">-->
+                <!--<img src="images/show1-2.jpg" class="opeimg opeimgrotate"  onclick="linktozjgc()">-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div style="float:right;width:576px;height:300px;padding:10px;">-->
+            <!--<div style="float:left;width:220px;height:300px;">-->
+                <!--<img src="images/show2-0.jpg" class="opeimg opeimgrotate" width="220" height="280"  onclick="linktozjgc()">-->
+            <!--</div>-->
+            <!--<div style="float:right;width:243px;height:300px">-->
+                <!--<div style="font-size:15px;font-weight: 600;">桥梁工程</div>-->
+                <!--<img src="images/show2-1.jpg" class="opeimg opeimgrotate" style="margin:7px 0;width: 240px;height:120px"  onclick="linktozjgc()">-->
+                <!--<img src="images/show2-2.jpg" class="opeimg opeimgrotate" style="width: 240px;height:120px"  onclick="linktozjgc()">-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+<div class="index1-div1" class="clearfix">
+    <div class="index1-right300" style="float:left;width:49%;height: 425px;">
+        <div class="title-box"><span id="notice-ul-1-name">中铁要闻</span><a href="detail.html" class="title-more">更多></a></div>
+        <ul id="notice-ul-1">
+            <!--<li><a href="detail1.html">通知</a><span>2017-02-23</span></li>-->
+        </ul>
+    </div>
+    <div class="index1-right300" style="width:49%;height: 425px;">
+        <div class="title-box"><span id="notice-ul-2-name">媒体聚焦</span><a href="detail.html" class="title-more">更多></a></div>
+        <ul id="notice-ul-2">
+            <!--<li><a href="detail1.html">通知</a><span>2017-02-23</span></li>-->
+        </ul>
     </div>
 </div>
 
-
-<div  style="height: auto;width: 998px;margin: 15px auto;border: 1px solid #ccc;">
+<div  style="height: auto;width: 1198px;margin: 15px auto;">
     <div style="float:left;width:49%;">
-        <div class="title-box">企业文化</div>
+        <div class="title-box"><span>企业文化</span><a href="other.html?key=gsjj" class="title-more">更多></a></div>
         <div style="padding:10px;">
             <p>企业使命</p>
-            <span style="color:#545454;font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;企业使命是企业生产经营的哲学定位，是企业肩负的最大责任和存在的根本。“以建筑传承文明”是集团公司行业特征的体现，也是企业以高度的政治责任感和社会责任感，筑造精品工程，为国家、为社会、为企业、为员工创造更加美好的未来的理念。
+            <span style="color:#333333;line-height:1.7;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;企业使命是企业生产经营的哲学定位，是企业肩负的最大责任和存在的根本。“以建筑传承文明”是集团公司行业特征的体现，也是企业以高度的政治责任感和社会责任感，筑造精品工程，为国家、为社会、为企业、为员工创造更加美好的未来的理念。
             </span>
             <img src="images/qyej.jpg" class="opeimg" style="margin:7px 0;width: 469px;height: 120px" onclick="linktogsjj()">
         </div>
     </div>
     <div style="float:right;width:49%;">
-        <div class="title-box">企业荣誉</div>
+        <div class="title-box"><span>企业荣誉</span><a href="other.html?key=gsjj" class="title-more">更多></a></div>
         <div style="padding:10px;">
             <p>荣誉证书</p>
-            <span style="color:#545454;font-size:12px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国内工程、海外经营、房地产开发三大业务协调发展，并取得很好的荣誉，激励公司进一步发展</span>
-            <div style="clear:both;margin-bottom:15px"></div>
+            <span style="color:#333333;line-height:1.7;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;国内工程、海外经营、房地产开发三大业务协调发展，并取得很好的荣誉，激励公司进一步发展</span>
+            <div style="clear:both;margin-bottom:16px"></div>
             <img src="images/rongyu1.jpg" class="opeimg" style="margin:7px 0;width: 234px;height: 125px;float:left" onclick="linktogsjj()">
             <img src="images/rongyu2.jpg" class="opeimg" style="margin:7px 0;width: 234px;height: 125px;float:right" onclick="linktogsjj()">
         </div>
@@ -365,6 +382,28 @@
 </script>
 
 <div id="div6">
+    <div class="bottom-content">
+        <div class="bottom-content_b">
+            <div class="bottom-content_left">
+                <div class="bottom-content_left-box">
+                    <div class="bottom-content_left-box-title">
+                        <a href="other.html?key=lxwm" target="_blank">联系我们</a>
+                    </div>
+                    <div class="bottom-content_left-box-b">
+                        <div class="bottom-content_left-box-btm">
+                            <p>地址：河南省郑州市陇海中路3号</p>
+                            <p>邮编：450000</p>
+                            <p>电话：13783698302</p>
+                            <p>邮箱：362628022@qq.com</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-content_right"></div>
+        </div>
+    </div>
+</div>
+<div id="div66">
     Copyright &copy; 2019 中铁七局集团郑州公司工程装备分公司 All rights reserved.
     <br/>
     豫ICP备19005114号-1

@@ -1,6 +1,8 @@
 var menuManager = {
     init:function(){
         this.getMenuLis();
+
+
     },
 
     getHref:function(ename){
@@ -10,8 +12,11 @@ var menuManager = {
         if(ename == 'gonggao'){//公司公告
             return 'detail.html';
         }
-        if(ename == 'rysl'){
+        if(ename == 'rysl'){//
             return 'people.html';
+        }
+        if(ename == 'gsxqczlyw'){//汽车租聘
+            return 'qichezupin.html';
         }
 
         return 'other.html?key='+ename;
@@ -45,3 +50,9 @@ var menuManager = {
 
 };
 menuManager.init();
+
+$(function(){
+    $(".logo img").click(function(){
+        location.href = 'index.html'
+    });
+});
