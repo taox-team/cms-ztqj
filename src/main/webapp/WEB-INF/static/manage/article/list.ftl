@@ -72,14 +72,8 @@
 								</#list>
 							</ul>
 						   </div>
-						   <div class="col-lg-2">
-								<a class="btn btn-primary" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=11">增加设备</a>
-						   </div>
-                            <div class="col-lg-2">
-                                <a class="btn btn-success" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=6">增加人员</a>
-                            </div>
-                            <div class="col-lg-2">
-                                <a class="btn btn-warning" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=16">增加公告</a>
+                            <div class="col-lg-8">
+                                <a class="btn btn-primary" style="float:right;" href="${BASE_PATH}/manage/article/add.htm?folderId=${folderId}">添加文章</a>
                             </div>
 				</div>
 			</header>
