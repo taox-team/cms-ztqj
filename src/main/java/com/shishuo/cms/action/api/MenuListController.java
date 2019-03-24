@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Controller
 @RequestMapping("/api/menu")
@@ -43,6 +44,31 @@ public class MenuListController extends ManageBaseAction {
         }
     }
 
+    @RequestMapping(value = "/getMenuByename", method = RequestMethod.GET)
+    @ResponseBody
+    public WebReturnObject getMenuByename(String ename){
+        try{
+            Folder folder =  this.folderService.getFolderByEname(ename);
+
+            if(folder == null) {
+                throw new NoSuchElementException("不存在该名称对应的目录");
+            }
+            FolderVo folderVo = this.folderService.getFolderById(folder.getFolderId());
+            List<FolderVo> childFolderList = this.folderService.getFolderListByFatherId(folderVo.getFolderId(),null);
+            if(childFolderList!=null){
+                folderVo.setFolderList(childFolderList);
+                for(FolderVo cld : childFolderList){
+                    List<FolderVo> list = this.folderService.getFolderListByFatherId(cld.getFolderId(),null);
+                    if(list!=null){
+                        cld.setFolderList(list);
+                    }
+                }
+            }
+            return WebReturnObject.getInstanceForSuccess(folderVo);
+        }catch (Exception e){
+            return WebReturnObject.getInstanceForError("返回错误",e.getMessage());
+        }
+    }
 
 
     @RequestMapping(value = "/getMenuById", method = RequestMethod.GET)
@@ -50,6 +76,16 @@ public class MenuListController extends ManageBaseAction {
     public WebReturnObject getMenuById(long id){
         try{
             FolderVo folderVo =  this.folderService.getFolderById(id);
+            List<FolderVo> childFolderList = this.folderService.getFolderListByFatherId(folderVo.getFolderId(),null);
+            if(childFolderList!=null){
+                folderVo.setFolderList(childFolderList);
+                for(FolderVo cld : childFolderList){
+                    List<FolderVo> list = this.folderService.getFolderListByFatherId(cld.getFolderId(),null);
+                    if(list!=null){
+                        cld.setFolderList(list);
+                    }
+                }
+            }
             return WebReturnObject.getInstanceForSuccess(folderVo);
         }catch (Exception e){
             return WebReturnObject.getInstanceForError("返回错误",e.getMessage());
@@ -59,11 +95,11 @@ public class MenuListController extends ManageBaseAction {
 
     @RequestMapping(value = "/getArticleByMenuId", method = {RequestMethod.GET,RequestMethod.POST})
     @ResponseBody
-    public WebReturnObject getArticleByMenuId(long menuId,Integer pageNum , Integer pageSize){
+    public WebReturnObject getArticleByMenuId(long folderId,Integer pageNum , Integer pageSize){
         try{
             pageNum = pageNum==null?1:pageNum;
             pageSize = pageSize==null?10:pageSize;
-            FolderVo folderVo =  this.folderService.getFolderById(menuId);
+            FolderVo folderVo =  this.folderService.getFolderById(folderId);
             PageVo<ArticleVo> pageList = this.articleService.getArticlePageByFolderId(folderVo.getFolderId(),pageNum,pageSize);
             return WebReturnObject.getInstanceForSuccess(pageList);
         }catch (Exception e){
