@@ -63,8 +63,8 @@ a:hover {
 }
 
 #hearder2 .logo img {
-    width: 81px;
-    height: 69px;
+    width: 497px;
+    height: 75px;
     margin-top: 10px;
 }
 
@@ -135,21 +135,22 @@ a:hover {
 #menu-box {
     width: 100%;
     background: #0067ca;
+
 }
 
 #menu-box ul {
     width: 1000px;
-    height: 40px;
+    height: 48px;
     margin: 0 auto;
 }
 
 #menu-box ul li {
-    width: 100px;
-    height: 40px;
-    line-height: 40px;
+    width: 90px;
+    height: 48px;
+    line-height: 48px;
     float: left;
     text-align: center;
-    font-size: 16px;
+    font-size: 17px;
 }
 #menu-box ul li.active{
     background: #0056a9;
@@ -163,15 +164,17 @@ a:hover {
     color: #fff;
     text-decoration: none;
     display: block;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 /* slider */
 #slider-box {
+    margin-top:5px;
     width: 100%;
-    height: 167px;
+    height: 150px;
     text-align: center;
     margin-bottom: 7px;
-    border-bottom: 1px solid #aaa;
 }
 
 /* --- 通用样式 --- */
@@ -181,10 +184,11 @@ a:hover {
     background: url(../images/title-bg.png);
     border-bottom: 1px solid #ccc;
     text-align: left;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 35px;
     color: #0067ca;
     position: relative;
+    font-weight: 600;
 }
 
 .title-more {
@@ -489,6 +493,15 @@ a:hover {
     margin: 15px auto;
     border: 1px solid #ccc;
 }
+#div44 {
+      width: 998px;
+      height: 35px;
+      margin: 15px auto;
+      border: 1px solid #ccc;
+  }
+.opeimg{
+    cursor: pointer;
+}
 
 /* scrollleft */
 .scrollleft {
@@ -534,11 +547,12 @@ a:hover {
 
 #div6 {
     width: 100%;
-    height: 45px;
+    height: 50px;
     background: #0067ca;
     color: #fff;
     text-align: center;
-    line-height: 45px;
+    line-height: 20px;
+    padding-top: 8px;
 }
 
 /* detail & list page style */
@@ -759,7 +773,7 @@ a:hover {
 
 #index1-div1 {
     width: 1000px;
-    margin: 0 auto 15px auto;
+    margin: 15px auto 15px auto;
 }
 
 #index1-div1 .index1-left675 {
