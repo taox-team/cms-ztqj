@@ -52,7 +52,7 @@ var listPicManager = {
                 if(res.success){
                     var data = res.data;
                     $("#pic-list").html('<li><div class="pic-title-content">'
-                           +'<div class="pic-title-img"><img src="http://'+location.host+'/'+data.pictureUrl+'"/></div>'
+                           // +'<div class="pic-title-img"><img src="http://'+location.host+'/'+data.pictureUrl+'"/></div>'
                             +'<div class="pic-title-title"><span>'+data.title+'</span><p>'+data.summary+'</p></div>'
                         +'</div><div class="pic-content">'+(data.content.replace(/src=\"/g,'src="http://'+location.host))+'</div></li>');
                     _this.formatArticleInfo();
@@ -103,7 +103,7 @@ var listPicManager = {
     getArticleByMenuId:function(id){
         var _this = this;
         $.ajax({
-            url: 'http://' + location.host + '/api/menu/getArticleByMenuId?menuId='+id+"&pageNum="+this.pageNum+"&pageSize="+this.pageSize,
+            url: 'http://' + location.host + '/api/menu/getArticleByMenuId?folderId='+id+"&pageNum="+this.pageNum+"&pageSize="+this.pageSize,
             method:'get',
             success:function(res){
                 if(res.success){

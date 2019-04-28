@@ -58,7 +58,7 @@ var listPicManager = {
                     var data = res.data;
                     $("#pic-list").html('<li><div class="pic-title-content" style="height:auto;">'
                         // +'<div class="pic-title-img"><img src="http://'+location.host+'/'+data.pictureUrl+'"/></div>'
-                        +'<div class="pic-title-title" style="padding:20px;"><span>'+data.title+'</span><p>'+data.summary+'</p></div>'
+                        +'<div class="pic-title-title" style="padding:0px 20px;"><span>'+data.title+'</span><p>'+data.summary+'</p></div>'
                         +'</div><div class="pic-content">'+(data.content.replace(/src=\"/g,'src="http://'+location.host))+'</div></li>');
                     _this.formatArticleInfo();
                 }else{

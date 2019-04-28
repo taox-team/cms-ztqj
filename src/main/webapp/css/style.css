@@ -6,7 +6,7 @@ body, div, address, blockquote, iframe, ul, ol, dl, dt, dd, li, dl, h1, h2, h3, 
     font-weight: normal;
     font-style: normal;
     font-size: 100%;
-    font-family: '微软雅黑', 'Microsoft YaHei', 'YaHei', sans-serif;
+    font-family: "微软雅黑","黑体";
 }
 
 ol, ul, li {
@@ -32,6 +32,7 @@ html {
 /*清除浮动样式class="clearfix"*/
 #pic-list{
     min-height: 300px;
+    font-size:16px;
 }
 .clearfix:after {
     content: ".";
@@ -556,7 +557,7 @@ a:hover {
 
 #div6 {
     width: 100%;
-    height: 180px;
+    /*height: 180px;*/
     background: #0067ca;
     color: #fff;
     text-align: center;
@@ -865,7 +866,8 @@ a:hover {
     display: block;
 }
 .pic-title-content{
-    height: 180px;
+    /*height: 180px;*/
+    height:50px;    
     overflow: hidden;
     width: 100%;
 }
@@ -876,13 +878,13 @@ a:hover {
 }
 .pic-title-img img{
     height: 200px;
-    width: 200px;
+    width: 163px;
 }
 .pic-title-title{
-    padding-left:220px;
+    /*padding-left:220px;*/
 }
 .pic-title-title span {
-    font-size: 25px;
+    font-size: 22px;
     text-align: center;
     color: #333333;
     line-height: 1.8;
@@ -896,7 +898,17 @@ a:hover {
     text-align: center;
 }
 .pic-content{
-    margin-top:20px;
+    /*margin-top:20px;*/
+}
+.pic-content table{
+    width:100%;
+    border:1px solid #888;
+    border-collapse: collapse
+}
+.pic-content table td {
+    border:1px solid #888;
+    text-align: center;
+    line-height: 2; 
 }
 .bottom-content{
     width: 1200px;
@@ -935,6 +947,12 @@ a:hover {
     color:#fff;
 }
 
+.bottom-content_left img{
+    display: none;
+}
+.bottom-content_left br{
+    display:none;
+}
 
 .bottom-content_left-box-b{
     width: 100%;
@@ -948,9 +966,17 @@ a:hover {
     color: #abcaeb;
     line-height: 40px;
 }
-.bottom-content_left-box-btm p{
+.bottom-content_left-box p{
     width: 50%;
     float: left;
+}
+.lxwm{
+    padding:0px 30px;
+}
+.lxwm p{
+    width: 100%;
+    line-height: 2;
+    /*float: left;*/
 }
 .gonggao-list{
     overflow: hidden;
@@ -972,6 +998,7 @@ a:hover {
     line-height: 44px;
     float: right;
     font-size: 16px;
+    font-family: "微软雅黑","黑体";
     color: #999999;
 
 }

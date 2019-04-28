@@ -37,6 +37,7 @@ var otherManager = {
                     var data = res.data;
                     for(let i=0;i<data.length;i++){
                         if(data[i].ename == _this.key){
+                            $("#pic-list").addClass(_this.key);
                             $("#pic-list").html(data[i].content)
                             $("#other-title").html(data[i].name)
                         }

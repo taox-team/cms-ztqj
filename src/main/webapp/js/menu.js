@@ -37,6 +37,8 @@ var menuManager = {
                         str = str + '<li class="'+(location.href.indexOf(href)>-1?"active":"")+'"><a href="'+href+'">'+obj.name+'</a></li>';
                     }
                     $("#menu-box-ul").html(str);
+
+                    _this.setFootMessage(data);
                 }else{
                     alert("请求失败，请刷新重试")
                 }
@@ -46,6 +48,14 @@ var menuManager = {
             }
         });
     },
+
+    setFootMessage:function(data){
+        for(var i=0;i<data.length;i++){
+            if(data[i].ename == 'lxwm'){
+                $(".bottom-content_left-box-btm").html(data[i].content);
+            }
+        }
+    }
 
 
 };
