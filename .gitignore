@@ -5,6 +5,7 @@ dist
 logs
 *.log
 *.log.*
+.db
 bin
 .settings
 .DS_Store

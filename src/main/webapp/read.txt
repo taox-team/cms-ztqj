@@ -1,12 +1,13 @@
 1、启动ngix
 C:\Users\Administrator\Downloads\nginx-1.12.2>
+D:\360Downloads\nginx-1.15.12\nginx-1.15.12
 start nginx
 taskkill /im nginx.exe /f
 2、nginx 配置
 server {
         listen       8081;
         server_name  localhost;
-        root E:\code2019\qiuzhiyuan;
+        root F:\code2019\cms-ztqj\src\main\webapp;
         index index.html;
         add_header Cache-Control no-cache;
         add_header Cache-Control private;

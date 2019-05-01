@@ -12,11 +12,15 @@ var menuManager = {
         if(ename == 'gonggao'){//公司公告
             return 'detail.html';
         }
-        if(ename == 'rysl'){//
+        if(ename == 'rysl'){//人员实力
             return 'people.html';
         }
         if(ename == 'gsxqczlyw'){//汽车租聘
             return 'qichezupin.html';
+        }
+
+        if(ename == 'zjgc'){//在建工程
+            return 'zjgc-list.html';
         }
 
         return 'other.html?key='+ename;
