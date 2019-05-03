@@ -23,6 +23,10 @@ var menuManager = {
             return 'zjgc-list.html';
         }
 
+        if(ename == 'whry'){//文化荣誉
+            return 'whry.html';
+        }
+
         return 'other.html?key='+ename;
     },
 

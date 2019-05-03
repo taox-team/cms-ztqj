@@ -14,10 +14,10 @@ var otherManager = {
         var mapkey = {
             "gsjj": 'banner01.jpg',
             "zyhdwjs": 'banner02.jpg',
-            "gsxqczlyw": 'banner04.jpg',
-            "ywhf": 'banner01.jpg',
-            "zjgc": 'banner07.jpg',
-            "lxwm": 'banner08.jpg'
+            "gsxqczlyw": 'banner03.jpg',
+            "ywhf": 'banner04.jpg',
+            "zjgc": 'banner05.jpg',
+            "lxwm": 'banner01.jpg'
         }
 
         if(mapkey[this.key]){

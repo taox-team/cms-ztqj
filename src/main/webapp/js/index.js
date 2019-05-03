@@ -3,6 +3,80 @@ var indexManager = {
         // this.getAnnouncementList();
         this.getAllArticleInDevice();
         this.getNoticeList();
+        this.getArticleByMenuId1();//企业荣誉folderId=40
+        this.getArticleByMenuId2();//企业荣誉folderId=41
+        this.getYWFW();//业务范围 id=8
+    },
+
+    getYWFW:function(){
+        var _this = this;
+        $.ajax({
+            url: 'http://' + location.host + '/api/menu/getMenuById?id=8',
+            method:'get',
+            success:function(res){
+                if(res.success){
+                    $("#ywfw").html(res.data.content);
+                }else{
+                    alert("请求失败，请刷新重试")
+                }
+            },
+            error:function(err){
+                alert("请求失败，请刷新重试")
+            }
+        });
+    },
+
+    getArticleByMenuId1:function(){
+        var _this = this;
+        $.ajax({
+            url: 'http://' + location.host + '/api/menu/getArticleByMenuId?folderId=40&pageNum=1&pageSize=10',
+            method:'get',
+            success:function(res){
+                if(res.success){
+                    var data = res.data;
+                    var obj = data.list[0];
+                    var id = obj.folderId;
+                    var str = '<div style="padding:10px;">'
+                        +'<p>'+obj.title+'</p>'
+                        +'<div class="gudingheight" style="color:#333333;line-height:1.7;font-size:14px;">'+(obj.content.replace(/src=\"/g,'src="http://'+location.host))
+                        +' </div>'
+                        +'<img src="http://'+location.host+'/'+obj.pictureUrl+'" class="opeimg" style="margin:7px 0;height: 120px">'
+                        +'</div>';
+                    $("#qywh").html(str);
+                }else{
+                    alert("请求失败，请刷新重试")
+                }
+            },
+            error:function(err){
+                alert("请求失败，请刷新重试")
+            }
+        });
+    },
+    getArticleByMenuId2:function(){
+        var _this = this;
+        $.ajax({
+            url: 'http://' + location.host + '/api/menu/getArticleByMenuId?folderId=41&pageNum=1&pageSize=10',
+            method:'get',
+            success:function(res){
+                if(res.success){
+                    var data = res.data;
+                    var obj = data.list[0];
+                    var id = obj.folderId;
+                    var str = '<div style="padding:10px;">'
+                        +'<p>'+obj.title+'</p>'
+                        +'<div class="gudingheight" style="color:#333333;line-height:1.7;font-size:14px;">'+(obj.content.replace(/src=\"/g,'src="http://'+location.host))
+                        +' </div>'
+                        +'<img src="http://'+location.host+'/'+obj.pictureUrl+'" class="opeimg" style="margin:7px 0;height: 120px">'
+                        +'</div>';
+                    $("#qyry").html(str);
+                }else{
+                    alert("请求失败，请刷新重试")
+                }
+            },
+            error:function(err){
+                alert("请求失败，请刷新重试")
+            }
+        });
     },
 
     getNoticeList:function(){

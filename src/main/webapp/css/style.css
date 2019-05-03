@@ -1002,3 +1002,14 @@ a:hover {
     color: #999999;
 
 }
+.gudingheight p{
+    height: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.people-link{
+    font-size: 12px;
+    margin-left: 10px;
+    color: #771cef;
+    cursor: pointer;
+}

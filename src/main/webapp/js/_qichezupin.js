@@ -33,7 +33,7 @@ var listPicManager = {
                 this.getArticleByMenuId(this.id);
             }
         }else{
-            // this.getAllArticleInDevice();
+            this.getAllArticleInDevice();
         }
         this.formatArticleInfo();
     },
@@ -57,16 +57,35 @@ var listPicManager = {
             success:function(res){
                 if(res.success){
                     var data = res.data;
-                    // var str = _this.formatImg(data.content);
+                    var str = _this.formatImg(data.content);
                     $("#pic-list").html('<li><div class="pic-title-content">'
                         // +'<div class="pic-title-img"><img src="http://'+location.host+'/'+data.pictureUrl+'"/></div>'
                         +'<div class="pic-title-title"><span>'+data.title+'</span><p>'+data.summary+'</p></div>'
-                        +'</div><div class="pic-content">'+(data.content.replace(/src=\"/g,'src="http://'+location.host).replace(/href=\"/g,'href="http://'+location.host))+'</div></li>');
+                        +'</div><div class="pic-content">'+(str.replace(/src=\"/g,'src="http://'+location.host).replace(/href=\"/g,'href="http://'+location.host))+'</div></li>');
 
-                    $("#pic-list img").click(function() {
-                        _this.imgShow("#outerdiv", "#innerdiv", "#bigimg",  $(this));
+                    $('.jqzoom').jqzoom({
+                        //（默认值）standard / reverse,原图用半透明图层遮盖
+                        zoomType: 'reverse',
+                        //是否在原图上显示镜头
+                        lens:true,
+                        // 预先加载大图片
+                        preloadImages: false,
+                        //放大镜是否总是显示存在
+                        alwaysOn:false,
+                        //放大窗口的尺寸
+                        zoomWidth: 340,
+                        zoomHeight: 440,
+                        //放大窗口相对于原图的偏移量、位置
+                        xOffset:10,
+                        yOffset:0,
+                        position:'left',
+                        //默认值：true，是否显示加载提示Loading zoom
+                        showPreload:true,
+                        //默认 Loading zoom，自定义加载提示文本
+                        preloadText: '加载中……',
+                        //imageOpacity 默认值 0.2 透明度
+                        title :'图片详情'
                     });
-
 
                     _this.formatArticleInfo();
                 }else{
@@ -76,49 +95,6 @@ var listPicManager = {
             error:function(err){
                 alert("请求失败，请刷新重试")
             }
-        });
-    },
-
-    imgShow:function(outerdiv, innerdiv, bigimg, _this){
-        var src = _this.attr("src");//获取当前点击的pimg元素中的src属性
-        $(bigimg).attr("src", src);//设置#bigimg元素的src属性
-
-        /*获取当前点击图片的真实大小，并显示弹出层及大图*/
-        $("<img/>").attr("src", src).load(function () {
-            var windowW = $(window).width();//获取当前窗口宽度
-            var windowH = $(window).height();//获取当前窗口高度
-            var realWidth = this.width;//获取图片真实宽度
-            var realHeight = this.height;//获取图片真实高度
-            var imgWidth, imgHeight;
-            var scale = 0.8;//缩放尺寸，当图片真实宽度和高度大于窗口宽度和高度时进行缩放
-
-            if (realHeight > windowH * scale) {//判断图片高度
-                imgHeight = windowH * scale;//如大于窗口高度，图片高度进行缩放
-                imgWidth = imgHeight
-                    / realHeight * realWidth;// 等比例缩放宽度
-                if (imgWidth > windowW * scale) {//如宽度扔大于窗口宽度
-                    imgWidth = windowW * scale;//再对宽度进行缩放
-                }
-            } else if (realWidth > windowW * scale) {//如图片高度合适，判断图片宽度
-                imgWidth = windowW * scale;//如大于窗口宽度，图片宽度进行缩放
-                imgHeight = imgWidth / realWidth * realHeight;// 等比例缩放高度
-            } else {//如果图片真实高度和宽度都符合要求，高宽不变
-                imgWidth = realWidth;
-                imgHeight = realHeight;
-            }
-            $(bigimg).css("width", imgWidth);//以最终的宽度对图片缩放
-
-            var w = (windowW - imgWidth) / 2;// 计算图片与窗口左边距
-            var h = (windowH - imgHeight) / 2;// 计算图片与窗口上边距
-            $(innerdiv).css({
-                "top": h,
-                "left": w
-            });//设置#innerdiv的top和left属性
-            $(outerdiv).fadeIn("fast");//淡入显示#outerdiv及.pimg
-        });
-
-        $(outerdiv).click(function () {//再次点击淡出消失弹出层
-            $(this).fadeOut("fast");
         });
     },
 
