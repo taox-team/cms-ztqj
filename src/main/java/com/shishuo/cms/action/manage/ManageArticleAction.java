@@ -185,14 +185,17 @@ public class ManageArticleAction extends ManageBaseAction {
 			return json;
 		} catch (UploadException e) {
 			e.printStackTrace();
+			json.setMsg(e.getMessage());
 			json.setResult(false);
 			return json;
 		} catch (IOException e) {
 			e.printStackTrace();
+			json.setMsg(e.getMessage());
 			json.setResult(false);
 			return json;
 		} catch (FolderNotFoundException e) {
 			e.printStackTrace();
+			json.setMsg(e.getMessage());
 			json.setResult(false);
 			return json;
 		}
