@@ -161,6 +161,19 @@
 			<artifactId>thumbnailator</artifactId>
 			<version>0.4.7</version>
 		</dependency>
+
+		<!-- cmyk格式图片转换 -->
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-jpeg</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+		<dependency>
+			<groupId>com.twelvemonkeys.imageio</groupId>
+			<artifactId>imageio-tiff</artifactId>
+			<version>3.3.2</version>
+		</dependency>
+
 	</dependencies>
 
 
