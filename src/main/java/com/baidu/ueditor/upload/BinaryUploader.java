@@ -1,5 +1,6 @@
 package com.baidu.ueditor.upload;
 
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Arrays;
@@ -8,8 +9,10 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.shishuo.cms.util.PicUtils;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.apache.commons.io.FileUtils;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -58,6 +61,7 @@ public class BinaryUploader {
 			String originFileName = file.getOriginalFilename();
 			String suffix = FileType.getSuffixByFilename(originFileName);
 
+
 			originFileName = originFileName.substring(0,
 					originFileName.length() - suffix.length());
 			savePath = savePath + suffix;
@@ -77,6 +81,8 @@ public class BinaryUploader {
 					physicalPath, maxSize);
 			is.close();
 
+			compressImage(file.getContentType() , physicalPath);
+
 			if (storageState.isSuccess()) {
 				storageState.putInfo("url", PathFormat.format(savePath));
 				storageState.putInfo("type", suffix);
@@ -88,6 +94,20 @@ public class BinaryUploader {
 			return new BaseState(false, AppInfo.IO_ERROR);
 		}
 
+	}
+
+	private static void compressImage(String contentType , String imgPath){
+		if(!contentType.toLowerCase().contains("image")){
+			return;
+		}
+		try {
+			byte[] bytes = PicUtils.compressPicForScale(new File(imgPath),30);
+			if(bytes!=null){
+				FileUtils.writeByteArrayToFile(new File(imgPath), bytes);
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	private static boolean validType(String type, String[] allowTypes) {
