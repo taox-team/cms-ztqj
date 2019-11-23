@@ -31,7 +31,7 @@ var listPicManager = {
                 this.getArticleByMenuId(this.id);
             }
         }else{
-            this.getAllArticleInDevice();
+            // this.getAllArticleInDevice();
         }
         this.formatArticleInfo();
     },

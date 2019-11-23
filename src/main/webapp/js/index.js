@@ -37,10 +37,10 @@ var indexManager = {
                     var obj = data.list[0];
                     var id = obj.folderId;
                     var str = '<div style="padding:10px;">'
-                        +'<p>'+obj.title+'</p>'
+                        +'<p style="font-size: 16px;">'+obj.title+'</p>'
                         +'<div class="gudingheight" style="color:#333333;line-height:1.7;font-size:14px;">'+(obj.content.replace(/src=\"/g,'src="http://'+location.host))
                         +' </div>'
-                        +'<img src="http://'+location.host+'/'+obj.pictureUrl+'" class="opeimg" style="margin:7px 0;height: 120px">'
+                        +'<img src="http://'+location.host+'/'+obj.pictureUrl+'" class="opeimg" style="margin:7px 0;max-width: 100%;">'
                         +'</div>';
                     $("#qywh").html(str);
                 }else{
@@ -63,10 +63,10 @@ var indexManager = {
                     var obj = data.list[0];
                     var id = obj.folderId;
                     var str = '<div style="padding:10px;">'
-                        +'<p>'+obj.title+'</p>'
+                        +'<p style="font-size: 16px;">'+obj.title+'</p>'
                         +'<div class="gudingheight" style="color:#333333;line-height:1.7;font-size:14px;">'+(obj.content.replace(/src=\"/g,'src="http://'+location.host))
                         +' </div>'
-                        +'<img src="http://'+location.host+'/'+obj.pictureUrl+'" class="opeimg" style="margin:7px 0;height: 120px">'
+                        // +'<img src="http://'+location.host+'/'+obj.pictureUrl+'" class="opeimg" style="margin:7px 0; max-width: 100%;">'
                         +'</div>';
                     $("#qyry").html(str);
                 }else{
