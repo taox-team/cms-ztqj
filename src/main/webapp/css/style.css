@@ -1003,8 +1003,8 @@ a:hover {
 
 }
 .gudingheight p{
-    height: 90px;
-    overflow: hidden;
+    /*height: 90px;*/
+    /*overflow: hidden;*/
     text-overflow: ellipsis;
 }
 .people-link{
