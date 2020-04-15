@@ -162,7 +162,7 @@ public class MenuListController extends ManageBaseAction {
     public WebReturnObject getPeopleList(Integer pageNum , Integer pageSize){
         try{
             pageNum = pageNum==null?1:pageNum;
-            pageSize = pageSize==null?50:pageSize;
+            pageSize = pageSize==null?200:pageSize;
             Folder folder  =  this.folderService.getFolderByEname(Constants.RYSL_NAME);
             PageVo<ArticleVo> pageList = this.articleService.getArticlePageByFolderId(folder.getFolderId(),pageNum,pageSize);
             return WebReturnObject.getInstanceForSuccess(pageList);

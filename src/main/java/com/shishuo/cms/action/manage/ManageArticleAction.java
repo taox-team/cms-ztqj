@@ -8,8 +8,10 @@ package com.shishuo.cms.action.manage;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.HashMap;
 import java.util.List;
 
+import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -118,6 +120,9 @@ public class ManageArticleAction extends ManageBaseAction {
 				+ noCount
 				+ articleService.getArticleCountByAdminIdAndFolderId(
 						admin.getAdminId(), 0, ArticleConstant.check.yes);
+		Map<String, String> args = new HashMap<String, String>();
+		args.put("folderId",folderId+"");
+		pageVo.setArgs(args);
 		modelMap.put("pathList", pathList);
 		modelMap.put("folderId", folderId);
 		modelMap.put("pageVo", pageVo);
