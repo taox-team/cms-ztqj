@@ -15,7 +15,7 @@ var menuManager = {
         if(ename == 'rysl'){//人员实力
             return 'people.html';
         }
-        if(ename == 'gsxqczlyw'){//汽车租聘
+        if(ename == 'gsxqczlyw'){//汽车租赁
             return 'qichezupin.html';
         }
 

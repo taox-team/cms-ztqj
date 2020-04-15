@@ -123,7 +123,7 @@ var listPicManager = {
                             +'<img src="http://'+location.host+'/'+obj.pictureUrl+'">'
                             +'</a>'
                             +'</div>'
-                            +'<h3><a href="qichezupin.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
+                            +'<h3><a href="zjgc-list.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
                             +'</li>';
                     }
                     $("#pic-list").html(str);

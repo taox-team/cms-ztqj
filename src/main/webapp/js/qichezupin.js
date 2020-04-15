@@ -39,15 +39,15 @@ var listPicManager = {
     },
     formatArticleInfo:function(){
         if(this.articleId != null ){
-            $("#title-pic").html("汽车租聘详情");
-            $("#isdetai").html("- 汽车租聘详情");
+            $("#title-pic").html("汽车租赁详情");
+            $("#isdetai").html("- 汽车租赁详情");
         }else{
             $("#isdetai").html("");
         }
     },
 
     formatListInfo:function(){
-        $("#title-pic").html("汽车租聘列表");
+        $("#title-pic").html("汽车租赁列表");
     },
     getArticleById:function(){
         var _this = this;
