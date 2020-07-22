@@ -12,7 +12,7 @@ var listPicManager = {
 
     pageNum:1,
 
-    pageSize:12,
+    pageSize:9999,
 
     total:0,
 

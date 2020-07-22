@@ -12,7 +12,7 @@ var listPicManager = {
 
     pageNum:1,
 
-    pageSize:12,
+    pageSize:9999,
 
     total:0,
 
@@ -83,7 +83,7 @@ var listPicManager = {
                             +'<img src="http://'+location.host+'/'+obj.pictureUrl+'">'
                             +'</a>'
                             +'</div>'
-                            +'<h3><a href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
+                            +'<h3><a style="display: inline-block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100%;" href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
                             +'</li>';
                     }
                     $("#pic-list").html(str);
@@ -117,7 +117,7 @@ var listPicManager = {
                             +'<img src="http://'+location.host+'/'+obj.pictureUrl+'">'
                             +'</a>'
                             +'</div>'
-                            +'<h3><a href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
+                            +'<h3><a style="display: inline-block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;width: 100%;" href="list-pic.html?id='+obj.folderId+'&articleId='+obj.articleId+'">'+obj.title+'</a></h3>'
                             +'</li>';
                     }
                     $("#pic-list").append(str);

@@ -1,5 +1,5 @@
 1、启动ngix
-C:\Users\Administrator\Downloads\nginx-1.12.2>
+C:\Users\Administrator\Downloads\nginx-1.18.0\nginx-1.18.0
 D:\360Downloads\nginx-1.15.12\nginx-1.15.12
 start nginx
 taskkill /im nginx.exe /f
