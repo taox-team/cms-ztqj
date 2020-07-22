@@ -63,7 +63,7 @@
 		update article set
 		commentCount = #{commentCount} where articleId = #{articleId}
 	</update>
-	
+
 	<update id="updateCheck">
 		update article set `check`=#{check} where articleId=#{articleId}
 	</update>
@@ -99,20 +99,20 @@
 		count(*)
 		from article where folderId = #{folderId}
 	</select>
-	
+
 	<select id="getArticleCountByAdminIdAndPath" resultType="Integer">
 		select
 		count(*)
-		from article where path like #{path}"%" and folderId in (select folderId from admin_folder where adminId = #{adminId})<if test="check !=null">and `check` = #{check}</if>
+		from article where path = #{path} and folderId in (select folderId from admin_folder where adminId = #{adminId})<if test="check !=null">and `check` = #{check}</if>
 	</select>
 
 	<select id="getArticleListByAdminIdAndPath" resultType="com.shishuo.cms.entity.vo.ArticleVo">
 		select * from
 		article
-		where path like #{path}"%" and folderId in (select folderId from admin_folder where adminId = #{adminId}) <if test="check !=null">and `check` = #{check}</if>
+		where path = #{path} and folderId in (select folderId from admin_folder where adminId = #{adminId}) <if test="check !=null">and `check` = #{check}</if>
 		order by createTime
 		desc limit
 		#{offset},#{rows}
 	</select>
 
-</mapper>  
+</mapper>
